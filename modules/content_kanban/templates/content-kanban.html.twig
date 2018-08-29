@@ -1,0 +1,33 @@
+<div class="content-kanban">
+
+  <h2 id="{{ kanban_id }}">{{ kanban_label }}</h2>
+
+  {% if permissions.create_node %}
+    <ul class="action-links">
+      {% for node_type, button_label in permissions.create_node %}
+        <li>
+          <a class="button button-action button--primary button--small" href="{{ path('node.add', {'node_type': node_type}) }}?destination={{ path('content_kanban.kanban') }}">{{ button_label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {{ filter_form }}
+
+  <table class="kanban-columns kanban-{{ columns|length }}-columns">
+    <thead>
+      <tr>
+        {% for header in headers %}
+          <th>{{ header }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for column in columns %}
+          {{ column }}
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</div>

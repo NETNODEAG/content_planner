@@ -1,0 +1,11 @@
+<div id="content-calendar-overview">
+  <div class="filters">
+    <h2>Filters</h2>
+    {{ filters_form }}
+  </div>
+  <div class="calendars">
+    {% for calendar in calendars %}
+      {{ calendar }}
+    {% endfor %}
+  </div>
+</div>

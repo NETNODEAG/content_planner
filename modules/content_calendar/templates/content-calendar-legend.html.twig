@@ -1,0 +1,16 @@
+<div class="legend">
+  <h3>{{ "Legend"|t }}</h3>
+
+  <ul class="explanations">
+    {% for entity_key, content_type_entity in content_type_configs %}
+
+      <li>
+        <span class="content-calendar-item-preview" style="border: 2px solid {{ content_type_entity.color }}">&nbsp;</span>
+        <span class="label">= {{ content_type_entity.label }}
+          (<a href="{{ path('entity.content_type_config.edit_form', {'content_type_config': entity_key}) }}?destination={{ path('content_calendar.calendar') }}">{{ "Configure" }}</a>)
+          </span>
+      </li>
+
+    {% endfor %}
+  </ul>
+</div>

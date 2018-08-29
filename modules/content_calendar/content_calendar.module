@@ -1,0 +1,110 @@
+<?php
+
+/**
+ * @file
+ * Contains content_calendar.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\content_calendar\DateTimeHelper;
+use Drupal\Core\Datetime\DrupalDateTime;
+
+/**
+ * Implements hook_theme().
+ */
+function content_calendar_theme($existing, $type, $theme, $path) {
+
+  return array(
+
+    'content_calendar_overview' => array(
+      'variables' => array(
+        'calendars' => array(),
+        'filters_form' => array()
+      ),
+    ),
+
+    'content_calendar' => array(
+      'variables' => array(
+        'calendar' => array(),
+        'node_type_creation_permissions' => array(),
+      ),
+    ),
+
+    'content_calendar_entry' => array(
+      'variables' => array(
+        'node' => NULL,
+        'node_type_config' => NULL,
+        'calendar_id' => NULL,
+        'month' => NULL,
+        'year' => NULL,
+        'user_picture' => NULL,
+        'options' => array(),
+        'workflow_state' => NULL,
+      ),
+    ),
+
+    'content_calendar_legend' => array(
+      'variables' => array(
+        'content_type_configs' => array(),
+      ),
+    ),
+
+    'content_calendar_jump_links' => array(
+      'variables' => array(
+        'months' => array(),
+        'year' => NULL,
+      ),
+    ),
+    'recent_calendar_content' => array(
+      'variables' => array(
+        'last_nodes' => array(),
+        'next_nodes' => NULL,
+      ),
+    ),
+
+  );
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function content_calendar_form_node_form_alter(&$form,
+                                               FormStateInterface $form_state,
+                                               $form_id) {
+
+  //If the user is on a form to add a new node
+  if(\Drupal::routeMatch()->getRouteName() == 'node.add') {
+
+    //Get Node Type from Route
+    $node_type = \Drupal::routeMatch()->getParameter('node_type');
+
+    /**
+     * @var $content_type_config_service \Drupal\content_calendar\ContentTypeConfigService
+     */
+    $content_type_config_service = \Drupal::service('content_calendar.content_type_config_service');
+
+    //If there is a creation date in the query string
+    if($content_type_config_service->loadEntityByContentType($node_type->id()) && \Drupal::request()->query->has('publish_on')) {
+
+      //Get date from query string
+      $date = \Drupal::request()->query->get('publish_on');
+
+      //If the date is a valid MySQL Date
+      if(DateTimeHelper::dateIsMySQLDateOnly($date)) {
+
+        //Create DrupalDateTime object
+        $datetime = DrupalDateTime::createFromFormat('Y-m-d', $date);
+
+        //Assign date to the created field
+        $form['created']['widget'][0]['value']['#default_value'] = $datetime;
+
+        //Assign date to the scheduler date, if it exists
+        if(array_key_exists('publish_on', $form)) {
+          $form['publish_on']['widget'][0]['value']['#default_value'] = $datetime;
+        }
+      }
+    }
+
+  }
+
+}

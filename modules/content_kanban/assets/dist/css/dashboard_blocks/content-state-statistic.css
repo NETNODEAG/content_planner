@@ -1,0 +1,26 @@
+#dashboard-content-state-statistic .dashboard-content-status-counts {
+  margin-left: 0;
+  padding-left: 0; }
+
+#dashboard-content-state-statistic .content-states-visual-bar {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2em; }
+  #dashboard-content-state-statistic .content-states-visual-bar .content-state-slice {
+    display: inline-block;
+    float: left; }
+
+#dashboard-content-state-statistic .content-state {
+  margin-bottom: 0.5em;
+  list-style: none; }
+  #dashboard-content-state-statistic .content-state .color {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: grey;
+    border-radius: 50%;
+    vertical-align: middle; }
+  #dashboard-content-state-statistic .content-state .label {
+    font-weight: normal; }
+
+/*# sourceMappingURL=content-state-statistic.css.map */

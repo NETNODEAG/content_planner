@@ -1,0 +1,22 @@
+{#
+/**
+ * @file content_kanban_log.html.twig
+ * Default theme implementation to present Kanban Log data.
+ *
+ * This template is used when viewing Kanban Log pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_content_kanban_log()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('content_kanban_log') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

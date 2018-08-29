@@ -1,0 +1,59 @@
+content_calendar.calendar:
+  path: '/admin/content-calendar/{year}'
+  defaults:
+    _controller: '\Drupal\content_calendar\Controller\CalendarController::showCalendarYear'
+    _title: 'Content Calendar'
+  requirements:
+    _permission: 'manage content calendar'
+    year: \d{4}
+
+content_calendar.current:
+  path: '/admin/content-calendar/show-current-year'
+  defaults:
+    _controller: '\Drupal\content_calendar\Controller\CalendarController::showCurrentCalendarYear'
+    _title: 'Content Calendar'
+  requirements:
+    _permission: 'manage content calendar'
+
+content_calendar.calendar_redirect:
+  path: '/admin/content-calendar/redirect/{year}/{month}'
+  defaults:
+    _controller: '\Drupal\content_calendar\Controller\CalendarController::redirectToCalendar'
+    _title: 'Content Calendar'
+  requirements:
+    _permission: 'manage content calendar'
+    year: \d{4}
+    month: \d{1,2}
+
+content_calendar.settings:
+  path: '/admin/content-calendar/settings'
+  defaults:
+    _form: '\Drupal\content_calendar\Form\SettingsForm'
+    _title: 'Content Calendar Settings'
+  requirements:
+    _permission: 'administer content calendar settings'
+
+content_calendar.upate_node_publish_date:
+  path: '/admin/content-calendar/update-node-publish-date/{node}/{date}'
+  defaults:
+    _controller: '\Drupal\content_calendar\Controller\CalendarController::updateNodePublishDate'
+  requirements:
+    _permission: 'manage content calendar'
+    node: \d+
+    date: \d{4}\-\d{2}\-\d{2}
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+content_calendar.duplicate_node:
+  path: '/node/{node}/duplicate'
+  defaults:
+    _controller: '\Drupal\content_calendar\Controller\CalendarController::duplicateNode'
+  requirements:
+    _permission: 'manage content calendar'
+    node: \d+
+  options:
+    parameters:
+      node:
+        type: entity:node

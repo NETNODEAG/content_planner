@@ -1,0 +1,5 @@
+<ul id="calendar-jump-links">
+  {% for month_number, month_label in months %}
+    <li><a href="#{{ year }}-{{ month_number }}">{{ month_label }}</a></li>
+  {% endfor %}
+</ul>

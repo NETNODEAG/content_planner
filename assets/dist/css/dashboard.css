@@ -1,0 +1,62 @@
+#content-planner-dashboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  #content-planner-dashboard:after {
+    content: '';
+    width: 30%; }
+  #content-planner-dashboard .dashboard-block {
+    position: relative;
+    box-sizing: content-box;
+    width: 30%;
+    margin-bottom: 2em; }
+    #content-planner-dashboard .dashboard-block .configure {
+      position: absolute;
+      top: 8px;
+      right: 0; }
+    #content-planner-dashboard .dashboard-block .dashboard-block-label {
+      border-bottom: 1px solid gray;
+      padding-bottom: 0.5em; }
+    #content-planner-dashboard .dashboard-block .dashboard-block-content {
+      max-height: 600px; }
+
+/* import dashboard blocks */
+#dashboard-user-block .user {
+  clear: both;
+  margin-bottom: 1em; }
+  #dashboard-user-block .user .user-image-placeholder {
+    background-color: #e7e7e7;
+    border: 1px solid darkgray;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; }
+    #dashboard-user-block .user .user-image-placeholder img {
+      border-radius: inherit; }
+  #dashboard-user-block .user .user-image {
+    float: left;
+    width: 50px;
+    min-height: 70px; }
+  #dashboard-user-block .user .user-name {
+    font-weight: bold; }
+
+#dashboard-recent-kanban-activities #content-kanban-recent-activities {
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 1em; }
+  #dashboard-recent-kanban-activities #content-kanban-recent-activities li {
+    list-style: none;
+    margin-bottom: 1em; }
+  #dashboard-recent-kanban-activities #content-kanban-recent-activities .user-profile-image-wrapper {
+    background-color: #e7e7e7;
+    border: 1px solid darkgray;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle; }
+    #dashboard-recent-kanban-activities #content-kanban-recent-activities .user-profile-image-wrapper img {
+      border-radius: inherit; }
+
+/*# sourceMappingURL=dashboard.css.map */

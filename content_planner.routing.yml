@@ -1,0 +1,23 @@
+content_planner.dashboard:
+  path: '/admin/content-planner/dashboard'
+  defaults:
+    _controller: '\Drupal\content_planner\Controller\DashboardController::showDashboard'
+    _title: 'Content Planner: Dashboard'
+  requirements:
+    _permission: 'view content planner dashboard'
+
+content_planner.dashboard_settings:
+  path: '/admin/content-planner/dashboard/settings'
+  defaults:
+    _form: '\Drupal\content_planner\Form\DashboardSettingsForm'
+    _title: 'Content Planner Dashboard Settings'
+  requirements:
+    _permission: 'administer content planner dashboard settings'
+
+content_planner.dashboard_block_config_form:
+  path: '/admin/content-planner/dashboard/configure/{block_id}'
+  defaults:
+    _form: '\Drupal\content_planner\Form\DashboardBlockConfigForm'
+    _title: 'Configure Block'
+  requirements:
+    _permission: 'administer content planner dashboard settings'

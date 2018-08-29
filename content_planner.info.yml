@@ -1,0 +1,7 @@
+name: 'Content Planner'
+type: module
+description: 'Plan your content using the Content Calendar and Content Kanban'
+core: 8.x
+package: 'Content Planner'
+dependencies:
+  - image

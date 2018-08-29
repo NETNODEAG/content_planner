@@ -1,0 +1,30 @@
+manage own content with content kanban:
+  title: 'Manage own content with Content Kanban'
+  description: 'User has access to Content Kanban and can manage own content'
+
+manage any content with content kanban:
+  title: 'Manage any content with Content Kanban'
+  description: 'User has access to Content Kanban and can manage any content'
+
+administer content kanban settings:
+  title: 'Administer Content Kanban settings'
+  description: 'Administer Content Kanban settings'
+  restrict access: TRUEadd kanban log entities:
+  title: 'Create new Kanban Log entities'
+
+administer kanban log entities:
+  title: 'Administer Kanban Log entities'
+  description: 'Allow to access the administration form to configure Kanban Log entities.'
+  restrict access: true
+
+delete kanban log entities:
+  title: 'Delete Kanban Log entities'
+
+edit kanban log entities:
+  title: 'Edit Kanban Log entities'
+
+view published kanban log entities:
+  title: 'View published Kanban Log entities'
+
+view unpublished kanban log entities:
+  title: 'View unpublished Kanban Log entities'

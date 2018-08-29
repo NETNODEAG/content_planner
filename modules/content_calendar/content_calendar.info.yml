@@ -1,0 +1,10 @@
+name: 'Content Calendar'
+type: module
+description: 'Drupal calendar module helps content and marketing teams to plan, organise and manage content.'
+core: 8.x
+package: 'Content Planner'
+configure: content_calendar.settings
+dependencies:
+  - image
+  - scheduler
+  - content_planner

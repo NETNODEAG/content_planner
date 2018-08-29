@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+#content-planner-dashboard {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &:after{
+    content: '';
+    width: 30%; // Same width of .grid__element
+  }
+
+  .dashboard-block {
+    position: relative;
+    box-sizing: content-box;
+
+    width: 30%;
+    margin-bottom: 2em;
+
+
+    .configure {
+      position: absolute;
+      top: 8px;
+      right: 0;
+    }
+
+    .dashboard-block-label {
+      border-bottom: 1px solid gray;
+      padding-bottom: 0.5em;
+    }
+
+    .dashboard-block-content {
+      max-height: 600px;
+    }
+
+  }
+}
+
+/* import dashboard blocks */
+@import "user_block";
+@import "recent_kanban_activities";

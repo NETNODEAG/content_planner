@@ -1,0 +1,30 @@
+<div class="kanban-entry" data-nid="{{ node.nid }}" style="border: 1px solid {{ node_type_config.color }}; color: {{ node_type_config.color }}">
+
+  <span class="node-type-label">{{ node_type_config.label }}</span>
+  <div class="user-info">
+    {% if user_picture %}
+      <span class="user-picture"><img src="{{ user_picture }}" alt="{{ node.username }}" /></span>
+    {% endif %}
+    <span class="username">{{ node.username }}</span>
+  </div>
+  <span class="node-title"><a href="{{ path('entity.node.canonical', {'node': node.nid}) }}">{{ node.title }}</a></span>
+  <span class="node-status">
+    {% if node.status %}
+        {{ "Published"|t }}
+        {% if node.entity.created.value %}
+          ({{ node.entity.created.value | date("d.m.Y H:i") }})
+        {% endif %}
+    {% else %}
+        {{ "Unpublished"|t }}
+        {% if node.entity.publish_on.value %}
+          (geplant: {{ node.entity.publish_on.value | date("d.m.Y H:i") }})
+        {% endif %}
+    {% endif %}
+  </span>
+
+  <ul class="node-actions">
+    <li><a class="node-action node-edit-link" href="{{ path('entity.node.edit_form', {'node': node.nid}) }}?destination={{ path('content_kanban.kanban') }}" title="{{ "Edit"|t }}">{{ "Edit"|t }}</a></li>
+    <li><a class="node-action node-delete-link" href="{{ path('entity.node.delete_form', {'node': node.nid}) }}?destination={{ path('content_kanban.kanban') }}" title="{{ "Delete"|t }}">{{ "Delete"|t }}</a></li>
+  </ul>
+
+</div>

@@ -1,0 +1,43 @@
+content_kanban.kanban_main_tab:
+  title: 'Kanban'
+  base_route: content_planner.dashboard
+  route_name: content_kanban.kanban
+
+content_kanban.kanban:
+  title: 'Kanban'
+  parent_id: content_kanban.kanban_main_tab
+  route_name: content_kanban.kanban
+
+content_kanban.settings:
+  title: 'Settings'
+  parent_id: content_kanban.kanban_main_tab
+  route_name: content_kanban.settings
+
+
+# Kanban Log routing definition
+content_kanban.log_collection:
+  title: 'Logs'
+  parent_id: content_kanban.kanban_main_tab
+  route_name: entity.content_kanban_log.collection
+
+content_kanban_log.settings_tab:
+  title: 'Settings'
+  route_name: content_kanban_log.settings
+  base_route: content_kanban_log.settings
+
+entity.content_kanban_log.canonical:
+  route_name: entity.content_kanban_log.canonical
+  base_route: entity.content_kanban_log.canonical
+  title: 'View'
+
+entity.content_kanban_log.edit_form:
+  route_name: entity.content_kanban_log.edit_form
+  base_route: entity.content_kanban_log.canonical
+  title: 'Edit'
+
+entity.content_kanban_log.delete_form:
+  route_name:  entity.content_kanban_log.delete_form
+  base_route:  entity.content_kanban_log.canonical
+  title: Delete
+  weight: 10
+

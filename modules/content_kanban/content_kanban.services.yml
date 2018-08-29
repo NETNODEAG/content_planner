@@ -1,0 +1,16 @@
+services:
+  content_kanban.kanban_service:
+    class: Drupal\content_kanban\KanbanService
+    arguments: ['@config.factory', '@database', '@content_moderation.moderation_information']
+
+  content_kanban.kanban_log_service:
+    class: Drupal\content_kanban\KanbanLogService
+    arguments: ['@database']
+
+  content_kanban.kanban_workflow_service:
+    class: Drupal\content_kanban\KanbanWorkflowService
+    arguments: ['@database', '@content_moderation.moderation_information', '@content_kanban.kanban_log_service']
+
+  content_kanban.kanban_statistic_service:
+    class: Drupal\content_kanban\KanbanStatisticService
+    arguments: ['@database']

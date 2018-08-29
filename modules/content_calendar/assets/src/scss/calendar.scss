@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+#content-calendar-overview {
+  display: flex;
+  flex-direction: row;
+}
+
+.calendar-id {
+  position: absolute;
+  top: -100px;
+}
+
+.filters {
+  width: 100%;
+  max-width: 200px;
+  position: fixed;
+
+  &.fixed {
+    top: 100px;
+  }
+}
+
+#edit-calendar-year {
+  width: 80%;
+}
+
+#calendar-jump-links {
+
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    list-style: none;
+    //border: 1px solid black;
+    padding: 5px;
+
+    display: inline-block;
+    width: 23%;
+    //text-align: center;
+  }
+}
+
+.calendars {
+  padding-left: 200px;
+}
+
+.content-calendar {
+
+  position: relative;
+  margin-bottom: 6em;
+
+  thead {
+    th {
+      border: 1px solid #bfbfba;
+    }
+  }
+
+  .cell {
+    height: 150px;
+    width: 185px;
+    vertical-align: top;
+    border: 1px solid #e6e4df;
+    position: relative;
+
+    &.hovering {
+      background-color: lightgreen;
+    }
+
+    .day {
+      margin-bottom: 1em;
+      display: block;
+    }
+
+    .add-content {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      color: black;
+
+      .add-button {
+        display: block;
+        text-align: center;
+        background-color: #e7e7e7;
+        border: 1px solid darkgray;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+      }
+
+      .add-content-label {
+        display: none;
+        margin-bottom: 0.5em;
+      }
+
+      .actions {
+        margin-left: 0;
+        padding-left: 0;
+        display: none;
+
+        li {
+          list-style: none;
+
+          a {
+            color: inherit;
+            display: block;
+          }
+        }
+      }
+
+
+      &:hover {
+        z-index: 1000;
+        color: black;
+        background-color: #e7e7e7;
+        border: 1px solid darkgray;
+        padding: 1em;
+
+        .add-button {
+          display: none;
+        }
+
+        .actions {
+          display: block;
+        }
+
+        .add-content-label {
+          display: block;
+        }
+
+      }
+    }
+  }
+
+  .disabled-day {
+    background: #f3f3f3;
+  }
+
+  .calendar-entry {
+    border: 1px solid grey;
+    font-size: 0.8rem;
+    padding: 0.5em;
+    position: relative;
+    min-height: 60px;
+    margin-bottom: 0.5em;
+    background-color: white;
+    cursor: move;
+
+    span {
+      display: block;
+    }
+
+    .user-info {
+
+      float: left;
+      margin-right: 0.7em;
+
+      .user-picture {
+        vertical-align: top;
+
+        img {
+          border-radius: 50%;
+        }
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
+
+    .node-title {
+      max-width: 85%;
+      clear: both;
+      height: 57px;
+      overflow: hidden;
+
+      a {
+        color: inherit;
+        font-weight: bold;
+      }
+    }
+
+    .state-and-publication {
+
+      padding-top: 5px;
+
+      > span {
+        display: inline-block;
+      }
+
+      .workflow-state {
+        color: white;
+        padding: 2px 3px;
+        border-radius: 3px;
+        max-width: 60%;
+        font-size: 0.7em;
+        font-weight: bold;
+        line-height: 1.2;
+        background-color: #333333;
+      }
+
+      .publish-on {
+        float: right;
+      }
+    }
+
+    .node-actions {
+
+      position: absolute;
+      right: 6px;
+      top: 6px;
+      z-index: 500;
+
+      li {
+        list-style: none;
+
+        .node-action {
+
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 16px 16px;
+          background-color: transparent;
+          text-indent: -9999px;
+          border-radius: 0;
+          border: 0;
+          width: 22px !important;
+          height: 22px !important;
+          display: inline-block;
+        }
+
+        .node-edit-link {
+          background-image: url('/core/themes/stable/images/core/icons/bebebe/pencil.svg');
+
+          &:hover {
+            background-image: url('/core/themes/stable/images/core/icons/787878/pencil.svg');
+          }
+        }
+
+        .node-delete-link {
+          background-image: url('/core/themes/stable/images/core/icons/bebebe/ex.svg');
+
+          &:hover {
+            background-image: url('/core/themes/stable/images/core/icons/787878/ex.svg');
+          }
+        }
+
+        .node-duplicate-link {
+          background-image: url('../images/copy.svg');
+
+          &:hover {
+            background-image: url('../images/copy-hover.svg');
+          }
+        }
+      }
+    }
+  }
+
+  .legend {
+    .explanations {
+      margin-left: 0;
+      padding-left: 0;
+
+      li {
+        list-style: none;
+        margin-bottom: 0.5em;
+      }
+
+      .content-calendar-item-preview {
+        width: 40px;
+        height: 20px;
+        border: 1px solid black;
+        display: inline-block;
+      }
+    }
+  }
+}

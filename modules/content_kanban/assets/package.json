@@ -1,0 +1,16 @@
+{
+  "name": "content_kanban",
+  "version": "0.0.1",
+  "description": "CSS and JS build tool for Content Kanban",
+  "author": "Martin Penev",
+  "scripts": {
+    "build-css": "node-sass --recursive --source-map true --include-path scss src/scss/ --output dist/css/",
+    "watch-css": "nodemon -e scss -x 'npm run build-css'",
+    "all": "parallelshell 'npm run serve' 'npm run watch-css'"
+  },
+  "devDependencies": {
+    "node-sass": "^4.0.0",
+    "nodemon": "^1.0.0",
+    "parallelshell": "^3.0.0"
+  }
+}

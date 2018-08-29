@@ -1,0 +1,16 @@
+<ul id="content-kanban-recent-activities">
+  {% for entry in entries %}
+    <li>
+        {% if show_user_thumb %}
+          <span class="user-profile-image-wrapper">
+              {% if entry.user_profile_image %}
+                  <img src="{{ entry.user_profile_image }}" alt="" />
+              {#{% else %}#}
+                  {#<span class="user-profile-image-placeholder">x</span>#}
+              {% endif %}
+          </span>
+        {% endif %}
+        <span class="log-message">{{ entry.message }}</span>
+    </li>
+  {% endfor %}
+</ul>

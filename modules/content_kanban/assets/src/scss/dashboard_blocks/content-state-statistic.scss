@@ -1,0 +1,40 @@
+#dashboard-content-state-statistic {
+
+  .dashboard-content-status-counts {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .content-states-visual-bar {
+
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2em;
+
+    .content-state-slice {
+      display: inline-block;
+      float: left;
+    }
+  }
+
+
+  .content-state {
+
+    margin-bottom: 0.5em;
+    list-style: none;
+
+    .color {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-color: grey;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+
+    .label {
+      font-weight: normal;
+    }
+  }
+
+}

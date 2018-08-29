@@ -1,0 +1,42 @@
+{%
+  set colors = [
+    '#ffb2fc',
+    '#fca747',
+    '#0096d0',
+    '#505050',
+    '#99529a',
+    '#5ebc68',
+    '#d3d3d3',
+  ]
+%}
+{# Calculate total #}
+{% set total_count = 0 %}
+{% for state in data %}
+  {% set total_count = total_count + state.count %}
+{% endfor %}
+
+{# visual bar #}
+<div class="content-states-visual-bar">
+
+  {% set color_index = 1 %}
+  {% for state in data %}
+
+    {% set slice_percentage = (state.count / total_count) * 100 %}
+
+    <div class="content-state-slice" style="background-color: {{ colors[color_index] }}; width: {{ slice_percentage }}%;">&nbsp;</div>
+    {% set color_index = color_index + 1 %}
+  {% endfor %}
+</div>
+
+{# count list #}
+<ul class="dashboard-content-status-counts">
+  {% set color_index = 1 %}
+  {% for state in data %}
+    <li class="content-state">
+      <span class="color" style="background-color: {{ colors[color_index] }}"></span>
+      <span class="label">{{ state.label }} ({{ state.count }})</span>
+    </li>
+    {% set color_index = color_index + 1 %}
+  {% endfor %}
+</ul>
+<strong>Total: {{ total_count }}</strong>

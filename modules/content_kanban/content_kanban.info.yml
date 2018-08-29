@@ -1,0 +1,9 @@
+name: 'Content Kanban'
+type: module
+description: 'A handy tool to organize Nodes in a Kanban. It uses the Content Moderation Workflow to display the Nodes by their workflow stati.'
+core: 8.x
+package: 'Content Planner'
+dependencies:
+  - content_moderation
+  - image
+  - content_planner

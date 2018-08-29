@@ -1,0 +1,27 @@
+<h3>{{ 'Last publications' | t }}</h3>
+<ul>
+{% for node in last_nodes %}
+    <li>
+        {% if node.created.value %}
+            {{ node.created.value | date("d.m.Y H:i") }}
+        {% endif %}
+        <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+             {{ node.title.value }}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
+<h3>{{ 'Next publications' | t }}</h3>
+<ul>
+{% for node in next_nodes %}
+    <li>
+        {% if node.publish_on.value %}
+            {{ node.publish_on.value | date("d.m.Y H:i") }}
+        {% endif %}
+        <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+            {{ node.title.value }}
+        </a>
+    </li>
+{% endfor %}
+</ul>

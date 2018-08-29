@@ -1,0 +1,14 @@
+{
+  "name": "drupal/content_calendar",
+  "type": "drupal-module",
+  "description": "Drupal calendar module helps content and marketing teams to plan, organise and manage content.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/content_calendar",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/content_calendar",
+    "source": "http://cgit.drupalcode.org/content_calendar"
+  },
+  "require": { }
+}

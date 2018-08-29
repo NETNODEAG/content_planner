@@ -1,0 +1,27 @@
+content_kanban.kanban:
+  path: '/admin/content-kanban'
+  defaults:
+    _controller: '\Drupal\content_kanban\Controller\KanbanController::showKanbans'
+    _title: 'Content Kanban'
+  requirements:
+    _custom_access: '\Drupal\content_kanban\Access\AccessCheck::canAccessContentKanban'
+
+content_kanban.settings:
+  path: '/admin/content-kanban/settings'
+  defaults:
+    _form: '\Drupal\content_kanban\Form\SettingsForm'
+    _title: 'Content Kanban Settings'
+  requirements:
+    _permission: 'administer content kanban settings'
+
+content_kanban.upate_node_workflow_state:
+  path: '/admin/content-kanban/update-node-workflow-state/{node}/{state_id}'
+  defaults:
+    _controller: '\Drupal\content_kanban\Controller\KanbanController::updateNodeWorkflowState'
+  requirements:
+    _custom_access: '\Drupal\content_kanban\Access\AccessCheck::canAccessContentKanban'
+    node: \d+
+  options:
+    parameters:
+      node:
+        type: entity:node

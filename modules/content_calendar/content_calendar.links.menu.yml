@@ -1,0 +1,19 @@
+content_calendar.base:
+  title: 'Content Calendar'
+  description: 'Content Calendar'
+  parent: content_planner.dashboard
+  route_name: content_calendar.current
+
+content_calendar.current:
+  title: 'Calendar'
+  description: 'Calendar'
+  parent: content_calendar.base
+  route_name: content_calendar.current
+  weight: 10
+
+content_calendar.settings:
+  title: 'Settings'
+  description: 'Settings'
+  parent: content_calendar.base
+  route_name: content_calendar.settings
+  weight: 20

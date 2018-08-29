@@ -1,0 +1,9 @@
+manage content calendar:
+  title: 'Manage Content Calendar'
+  description: 'Manage Content Calendar'
+  restrict access: TRUE
+
+administer content calendar settings:
+  title: 'Administer Content Calendar settings'
+  description: 'Administer Content Calendar settings'
+  restrict access: TRUE

@@ -1,0 +1,14 @@
+content_calendar.calendar_main_tab:
+  title: 'Calendar'
+  base_route: content_planner.dashboard
+  route_name: content_calendar.current
+
+content_calendar.calendar:
+  title: 'Calendar'
+  parent_id: content_calendar.calendar_main_tab
+  route_name: content_calendar.current
+
+content_calendar.settings:
+  title: 'Settings'
+  parent_id: content_calendar.calendar_main_tab
+  route_name: content_calendar.settings

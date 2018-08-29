@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: content_calendar_user_thumb
+label: 'Content Calendar: User image thumbnail'
+effects:
+  6fce5545-f8ca-49d8-869e-3003c6ad7606:
+    uuid: 6fce5545-f8ca-49d8-869e-3003c6ad7606
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 20
+      height: 20

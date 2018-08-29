@@ -1,0 +1,13 @@
+langcode: de
+status: true
+dependencies: {  }
+name: content_kanban_user_thumb
+label: 'Content Kanban: User image thumbnail'
+effects:
+  39a12977-e4ea-467d-90be-9712c5a35684:
+    uuid: 39a12977-e4ea-467d-90be-9712c5a35684
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 20
+      height: 20

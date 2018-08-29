@@ -1,0 +1,5 @@
+#entity.content_kanban_log.add_form:
+#  route_name: entity.content_kanban_log.add_form
+#  title: 'Add Kanban Log'
+#  appears_on:
+#    - entity.content_kanban_log.collection

@@ -1,0 +1,14 @@
+content_planner.dashboard_main_tab:
+  title: 'Dashboard'
+  base_route: content_planner.dashboard
+  route_name: content_planner.dashboard
+
+content_planner.dashboard:
+  title: 'Dashboard'
+  parent_id: content_planner.dashboard_main_tab
+  route_name: content_planner.dashboard
+
+content_planner.dashboard_settings:
+  title: 'Settings'
+  parent_id: content_planner.dashboard_main_tab
+  route_name: content_planner.dashboard_settings

@@ -1,0 +1,5 @@
+<div id="dashboard-{{ css_id }}" class="dashboard-block">
+  <a href="{{ path('content_planner.dashboard_block_config_form', {'block_id': block_id}) }}?destination={{ path('content_planner.dashboard') }}" class="configure">{{ "Configure"|t }}</a>
+  <h2 class="dashboard-block-label">{{ name }}</h2>
+  <div class="dashboard-block-content">{{ block }}</div>
+</div>

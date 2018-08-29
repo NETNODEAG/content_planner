@@ -1,0 +1,97 @@
+<div class="content-calendar">
+
+  <div class="calendar-id" id="{{ calendar.calendar_id }}"></div>
+
+  <h2>{{ calendar.label }}</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th>{{ "Monday"|t }}</th>
+      <th>{{ "Tuesday"|t }}</th>
+      <th>{{ "Wednesday"|t }}</th>
+      <th>{{ "Thursday"|t }}</th>
+      <th>{{ "Friday"|t }}</th>
+      <th>{{ "Saturday"|t }}</th>
+      <th>{{ "Sunday"|t }}</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+    {# If the month does not start with a Monday #}
+    {% if calendar.days[0].weekday != 1 %}
+
+    {% set cells_previous_month = calendar.days[0].weekday - 1 %}
+    <tr>
+
+      {% for i in 1..cells_previous_month %}
+        <td class="cell disabled-day">&nbsp;</td>
+      {% endfor %}
+
+      {% set item_counter = cells_previous_month %}
+
+      {% else %} {# If the month starts with a Monday #}
+        {% set item_counter = 0 %}
+      {% endif %}
+
+
+      {# Loop over the month's days #}
+      {% for day in calendar.days %}
+
+      {% set item_counter = item_counter + 1 %}
+
+      {% if item_counter == 1 %}
+      <tr>
+      {% endif %}
+
+    <td class="cell droppable" data-date="{{ day.date }}">
+      <span class="day">{{ day.day }}</span>
+
+      <div class="add-content">
+        <div class="add-button">+</div>
+        <span class="add-content-label">{{ "Add Content"|t }}</span>
+        <ul class="actions">
+
+          {% for entity_key, content_type_entity in node_type_creation_permissions %}
+            <li>
+                  <span class="label">
+                    <a href="{{ path('node.add', {'node_type': entity_key}) }}?destination={{ path('content_calendar.calendar_redirect', {'year': calendar.year, 'month': calendar.month}) }}&publish_on={{ day.date }}">{{ content_type_entity.label }}</a>
+                  </span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+
+      {% for node in day.nodes %}
+        {{ node }}
+      {% endfor %}
+    </td>
+
+    {% if item_counter == 7 %}
+      </tr>
+      {% set item_counter = 0 %}
+    {% endif %}
+
+    {% endfor %}
+
+    {# If the last day of the month is not on a sunday, then use the rest of the cells as padding #}
+    {% if item_counter != 7 %}
+
+      {% set cells_next_month = 7 - item_counter %}
+
+      {% for i in 1..cells_next_month %}
+        <td class="cell disabled-day">&nbsp;</td>
+      {% endfor %}
+      </tr>
+    {% endif %}
+
+    </tbody>
+
+  </table>
+
+  {{ legend }}
+
+</div>

@@ -1,0 +1,70 @@
+.content-kanban .kanban-columns .kanban-column {
+  vertical-align: top; }
+  .content-kanban .kanban-columns .kanban-column.hovering {
+    background-color: lightgreen; }
+  .content-kanban .kanban-columns .kanban-column .nodes {
+    background-color: yellowgreen;
+    height: 100%; }
+  .content-kanban .kanban-columns .kanban-column .kanban-entry {
+    border: 1px solid grey;
+    font-size: 0.8rem;
+    padding: 0.5em;
+    position: relative;
+    min-height: 60px;
+    margin-bottom: 0.5em;
+    background-color: white;
+    cursor: move; }
+    .content-kanban .kanban-columns .kanban-column .kanban-entry span {
+      display: block; }
+    .content-kanban .kanban-columns .kanban-column .kanban-entry .user-info .user-picture {
+      vertical-align: top; }
+    .content-kanban .kanban-columns .kanban-column .kanban-entry .user-info span {
+      display: inline-block; }
+    .content-kanban .kanban-columns .kanban-column .kanban-entry .node-title {
+      max-width: 85%; }
+      .content-kanban .kanban-columns .kanban-column .kanban-entry .node-title a {
+        color: inherit;
+        font-weight: bold; }
+    .content-kanban .kanban-columns .kanban-column .kanban-entry .node-actions {
+      position: absolute;
+      right: 6px;
+      top: 6px;
+      z-index: 500; }
+      .content-kanban .kanban-columns .kanban-column .kanban-entry .node-actions li {
+        list-style: none; }
+        .content-kanban .kanban-columns .kanban-column .kanban-entry .node-actions li .node-action {
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 16px 16px;
+          background-color: transparent;
+          text-indent: -9999px;
+          border-radius: 0;
+          border: 0;
+          width: 22px !important;
+          height: 22px !important;
+          display: inline-block; }
+        .content-kanban .kanban-columns .kanban-column .kanban-entry .node-actions li .node-edit-link {
+          background-image: url("/core/themes/stable/images/core/icons/bebebe/pencil.svg"); }
+          .content-kanban .kanban-columns .kanban-column .kanban-entry .node-actions li .node-edit-link:hover {
+            background-image: url("/core/themes/stable/images/core/icons/787878/pencil.svg"); }
+        .content-kanban .kanban-columns .kanban-column .kanban-entry .node-actions li .node-delete-link {
+          background-image: url("/core/themes/stable/images/core/icons/bebebe/ex.svg"); }
+          .content-kanban .kanban-columns .kanban-column .kanban-entry .node-actions li .node-delete-link:hover {
+            background-image: url("/core/themes/stable/images/core/icons/787878/ex.svg"); }
+
+.content-kanban .kanban-columns.kanban-2-columns .kanban-column {
+  width: 50%; }
+
+.content-kanban .kanban-columns.kanban-3-columns .kanban-column {
+  width: 33%; }
+
+.content-kanban .kanban-columns.kanban-4-columns .kanban-column {
+  width: 25%; }
+
+.content-kanban .kanban-columns.kanban-5-columns .kanban-column {
+  width: 20%; }
+
+.content-kanban .kanban-columns.kanban-6-columns .kanban-column {
+  width: 16.666666667%; }
+
+/*# sourceMappingURL=kanban.css.map */

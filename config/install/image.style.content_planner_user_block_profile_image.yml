@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: content_planner_user_block_profile_image
+label: 'Content Planner: User Block Profile Image'
+effects:
+  925c2c26-fb32-483b-977d-a659b771e47f:
+    uuid: 925c2c26-fb32-483b-977d-a659b771e47f
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 40
+      height: 40

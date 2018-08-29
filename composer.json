@@ -1,0 +1,14 @@
+{
+  "name": "drupal/content_planner",
+  "type": "drupal-module",
+  "description": "Plan your content using the Content Calendar and Content Kanban",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/content_planner",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/content_planner",
+    "source": "http://cgit.drupalcode.org/content_planner"
+  },
+  "require": { }
+}

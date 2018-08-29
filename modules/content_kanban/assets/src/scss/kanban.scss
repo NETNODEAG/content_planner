@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+.content-kanban {
+
+
+  .kanban-columns {
+
+
+    .kanban-column {
+
+      vertical-align: top;
+
+      &.hovering {
+        background-color: lightgreen;
+      }
+
+      .nodes {
+        background-color: yellowgreen;
+        height: 100%;
+      }
+
+      .kanban-entry {
+        border: 1px solid grey;
+        font-size: 0.8rem;
+        padding: 0.5em;
+        position: relative;
+        min-height: 60px;
+        margin-bottom: 0.5em;
+        background-color: white;
+        cursor: move;
+
+        span {
+          display: block;
+        }
+
+        .user-info {
+
+          .user-picture {
+            vertical-align: top;
+          }
+
+          span {
+            display: inline-block;
+          }
+        }
+
+        .node-title {
+          max-width: 85%;
+
+          a {
+            color: inherit;
+            font-weight: bold;
+          }
+        }
+
+        .node-actions {
+
+          position: absolute;
+          right: 6px;
+          top: 6px;
+          z-index: 500;
+
+          li {
+            list-style: none;
+
+            .node-action {
+
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: 16px 16px;
+              background-color: transparent;
+              text-indent: -9999px;
+              border-radius: 0;
+              border: 0;
+              width: 22px !important;
+              height: 22px !important;
+              display: inline-block;
+            }
+
+            .node-edit-link {
+              background-image: url('/core/themes/stable/images/core/icons/bebebe/pencil.svg');
+
+              &:hover {
+                background-image: url('/core/themes/stable/images/core/icons/787878/pencil.svg');
+              }
+            }
+
+            .node-delete-link {
+              background-image: url('/core/themes/stable/images/core/icons/bebebe/ex.svg');
+
+              &:hover {
+                background-image: url('/core/themes/stable/images/core/icons/787878/ex.svg');
+              }
+            }
+
+          }
+        }
+      }
+
+
+    }
+
+    //Workflow with 2 states
+    &.kanban-2-columns {
+
+      .kanban-column {
+        width: 50%;
+      }
+    }
+
+    //Workflow with 3 states
+    &.kanban-3-columns {
+
+      .kanban-column {
+        width: 33%;
+      }
+    }
+
+    //Workflow with 4 states
+    &.kanban-4-columns {
+
+      .kanban-column {
+        width: 25%;
+      }
+    }
+
+    //Workflow with 5 states
+    &.kanban-5-columns {
+
+      .kanban-column {
+        width: 20%;
+      }
+    }
+
+    //Workflow with 6 states
+    &.kanban-6-columns {
+
+      .kanban-column {
+        width: 16.666666667%;
+      }
+    }
+  }
+
+
+}

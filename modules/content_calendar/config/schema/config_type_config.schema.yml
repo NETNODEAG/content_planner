@@ -1,0 +1,15 @@
+content_calendar.content_type_config.*:
+  type: config_entity
+  label: 'Content Type Config config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    color:
+      type: string
+      label: 'Color'

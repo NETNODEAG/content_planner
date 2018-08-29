@@ -1,0 +1,11 @@
+dashboard:
+  version: 1.0
+  css:
+    theme:
+      assets/dist/css/dashboard.css: {}
+
+drag_and_drop:
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js: { type: external }
+  dependencies:
+  - core/jquery

@@ -1,0 +1,13 @@
+services:
+  content_calendar.content_type_config_service:
+    class: Drupal\content_calendar\ContentTypeConfigService
+    arguments: ['@config.factory']
+
+  content_calendar.content_calendar_service:
+    class: Drupal\content_calendar\ContentCalendarService
+    arguments: ['@database', '@content_calendar.content_type_config_service']
+
+  content_calendar.scheduler_publish_subscriber:
+    class: Drupal\content_calendar\EventSubscriber\SchedulerPublishSubScriber
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,18 @@
+kanban:
+  version: 1.0
+  css:
+    theme:
+      assets/dist/css/kanban.css: {}
+  js:
+    assets/dist/js/kanban.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - content_planner/drag_and_drop
+
+content_state_statistic:
+  version: 1.0
+  css:
+    theme:
+      assets/dist/css/dashboard_blocks/content-state-statistic.css: {}

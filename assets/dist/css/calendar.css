@@ -1,0 +1,118 @@
+.calendar-id {
+  position: absolute;
+  top: -100px; }
+
+.content-calendar {
+  position: relative; }
+  .content-calendar thead th {
+    border: 1px solid #bfbfba; }
+  .content-calendar .cell {
+    height: 150px;
+    width: 150px;
+    vertical-align: top;
+    border: 1px solid #e6e4df;
+    position: relative; }
+    .content-calendar .cell.hovering {
+      background-color: lightgreen; }
+    .content-calendar .cell .day {
+      margin-bottom: 1em;
+      display: block; }
+    .content-calendar .cell .add-content {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      color: white; }
+      .content-calendar .cell .add-content .add-button {
+        display: block;
+        text-align: center;
+        background-color: #0071b8;
+        border: 1px solid #1e5c90;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px; }
+      .content-calendar .cell .add-content .add-content-label {
+        display: none;
+        margin-bottom: 0.5em; }
+      .content-calendar .cell .add-content .actions {
+        margin-left: 0;
+        padding-left: 0;
+        display: none; }
+        .content-calendar .cell .add-content .actions li {
+          list-style: none; }
+          .content-calendar .cell .add-content .actions li a {
+            color: inherit;
+            display: block; }
+      .content-calendar .cell .add-content:hover {
+        z-index: 1000;
+        color: white;
+        background-color: #0071b8;
+        border: 1px solid #1e5c90;
+        padding: 1em; }
+        .content-calendar .cell .add-content:hover .add-button {
+          display: none; }
+        .content-calendar .cell .add-content:hover .actions {
+          display: block; }
+        .content-calendar .cell .add-content:hover .add-content-label {
+          display: block; }
+  .content-calendar .disabled-day {
+    background: #f3f3f3; }
+  .content-calendar .calendar-entry {
+    border: 1px solid grey;
+    font-size: 0.8rem;
+    padding: 0.5em;
+    position: relative;
+    min-height: 60px;
+    margin-bottom: 0.5em;
+    background-color: white;
+    cursor: move; }
+    .content-calendar .calendar-entry span {
+      display: block; }
+    .content-calendar .calendar-entry .user-info .user-picture {
+      vertical-align: top; }
+    .content-calendar .calendar-entry .user-info span {
+      display: inline-block; }
+    .content-calendar .calendar-entry .node-title {
+      max-width: 85%; }
+      .content-calendar .calendar-entry .node-title a {
+        color: inherit;
+        font-weight: bold; }
+    .content-calendar .calendar-entry .node-actions {
+      position: absolute;
+      right: 6px;
+      top: 6px;
+      z-index: 500; }
+      .content-calendar .calendar-entry .node-actions li {
+        list-style: none; }
+        .content-calendar .calendar-entry .node-actions li .node-action {
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 16px 16px;
+          background-color: transparent;
+          text-indent: -9999px;
+          border-radius: 0;
+          border: 0;
+          width: 22px !important;
+          height: 22px !important;
+          display: inline-block; }
+        .content-calendar .calendar-entry .node-actions li .node-edit-link {
+          background-image: url("/core/themes/stable/images/core/icons/bebebe/pencil.svg"); }
+          .content-calendar .calendar-entry .node-actions li .node-edit-link:hover {
+            background-image: url("/core/themes/stable/images/core/icons/787878/pencil.svg"); }
+        .content-calendar .calendar-entry .node-actions li .node-delete-link {
+          background-image: url("/core/themes/stable/images/core/icons/bebebe/ex.svg"); }
+          .content-calendar .calendar-entry .node-actions li .node-delete-link:hover {
+            background-image: url("/core/themes/stable/images/core/icons/787878/ex.svg"); }
+  .content-calendar .legend .explanations {
+    margin-bottom: 6em;
+    margin-left: 0;
+    padding-left: 0; }
+    .content-calendar .legend .explanations li {
+      list-style: none;
+      margin-bottom: 0.5em; }
+    .content-calendar .legend .explanations .content-calendar-item-preview {
+      width: 40px;
+      height: 20px;
+      border: 1px solid black;
+      display: inline-block; }
+
+/*# sourceMappingURL=calendar.css.map */

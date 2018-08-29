@@ -1,0 +1,94 @@
+<?php
+
+/**
+ * @file
+ * Contains content_kanban.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_theme().
+ */
+function content_kanban_theme($existing, $type, $theme, $path) {
+
+  return array(
+
+    'content_kanban' => array(
+      'variables' => array(
+        'kanban_id' => NULL,
+        'kanban_label' => NULL,
+        'filter_form' => array(),
+        'permissions' => array(),
+        'headers' => array(),
+        'columns' => array(),
+      ),
+    ),
+
+    'content_kanban_column' => array(
+      'variables' => array(
+        'column_id' => NULL,
+        'workflow_id' => NULL,
+        'state_id' => NULL,
+        'state_label' => NULL,
+        'nodes' => array(),
+      ),
+    ),
+
+    'content_kanban_column_entry' => array(
+      'variables' => array(
+        'node' => NULL,
+        'node_type_config' => NULL,
+        'user_picture' => NULL
+      ),
+    ),
+
+    'content_kanban_log_recent_activity' => array(
+      'variables' => array(
+        'show_user_thumb' => FALSE,
+        'entries' => array(),
+      ),
+    ),
+
+    'content_state_statistic' => array(
+      'variables' => array(
+        'data' => FALSE,
+      ),
+    ),
+
+  );
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave()
+ */
+function content_kanban_node_presave(EntityInterface $entity) {
+
+  /**
+   * @var $moderation_information \Drupal\content_kanban\KanbanWorkflowService
+   */
+  $kanban_workflow_service = \Drupal::service('content_kanban.kanban_workflow_service');
+
+  $kanban_workflow_service->onNodePresave($entity, \Drupal::currentUser());
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function content_kanban_preprocess_content_calendar_entry(&$variables) {
+
+  /**
+   * @var $kanban_workflow_service \Drupal\content_kanban\KanbanWorkflowService
+   */
+  $kanban_workflow_service = \Drupal::service('content_kanban.kanban_workflow_service');
+
+  //Fully load node
+  $node = Node::load($variables['node']->nid);
+
+  //Get workflow state label from node
+  $workflow_state_label = $kanban_workflow_service->getCurrentStateLabel($node);
+
+  //Add label to template
+  $variables['workflow_state'] = $workflow_state_label;
+}

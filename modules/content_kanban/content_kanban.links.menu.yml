@@ -1,0 +1,27 @@
+content_kanban.base:
+  title: 'Content Kanban'
+  description: 'Content Kanban'
+  parent: content_planner.dashboard
+  route_name: content_kanban.kanban
+
+# Kanban Log menu items definition
+content_kanban.kanban:
+  title: 'Kanban'
+  description: 'Kanban'
+  parent: content_kanban.base
+  route_name: content_kanban.kanban
+  weight: 10
+
+content_kanban_log.admin.structure.settings:
+  title: 'Settings'
+  description: 'Settings'
+  parent: content_kanban.base
+  route_name: content_kanban_log.settings
+  weight: 20
+
+entity.content_kanban_log.collection:
+  title: 'Logs'
+  description: 'Logs'
+  parent: content_kanban.base
+  route_name: entity.content_kanban_log.collection
+  weight: 30

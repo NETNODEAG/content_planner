@@ -1,0 +1,33 @@
+#dashboard-recent-kanban-activities {
+
+  #content-kanban-recent-activities {
+
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 1em;
+
+    li {
+      list-style: none;
+      margin-bottom: 1em;
+    }
+
+    .user-profile-image-wrapper {
+      background-color: #e7e7e7;
+      border: 1px solid darkgray;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      border-radius: 50%;
+      vertical-align: middle;
+
+      img {
+        border-radius: inherit;
+      }
+    }
+
+    .user-profile-image-placeholder {
+
+    }
+  }
+}
+

@@ -1,0 +1,12 @@
+services:
+  content_planner.dashboard_settings_service:
+    class: Drupal\content_planner\DashboardSettingsService
+    arguments: ['@config.factory']
+
+  content_planner.dashboard_service:
+    class: Drupal\content_planner\DashboardService
+    arguments: ['@content_planner.dashboard_settings_service']
+
+  content_planner.dashboard_block_plugin_manager:
+    class: Drupal\content_planner\DashboardBlockPluginManager
+    parent: default_plugin_manager
