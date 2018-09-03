@@ -1,5 +1,5 @@
 {
-  "name": "NATENODEAG/content_planner",
+  "name": "netnodeag/content_planner",
   "type": "drupal-module",
   "description": "Plan your content using the Content Calendar and Content Kanban",
   "keywords": ["Drupal"],
