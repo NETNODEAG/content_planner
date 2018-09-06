@@ -20,5 +20,5 @@
   "require": {
     "php": "^7.0",
     "drupal/scheduler": "^1.0"
-  },
+  }
 }
