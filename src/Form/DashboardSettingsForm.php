@@ -99,15 +99,15 @@ class DashboardSettingsForm extends ConfigFormBase {
 
     $form['available_dashboard_blocks'] = [
       '#type' => 'fieldset',
-      '#title' => t('Available Dashboard Block'),
+      '#title' => t('Dashboard Widgets'),
       '#collapsible' => FALSE,
       '#collapsed' => FALSE,
     ];
 
     $form['available_dashboard_blocks']['enabled_blocks'] = [
       '#type' => 'checkboxes',
-      '#title' => t('Select the Blocks to be displayed in Dashboard'),
-      '#description' => t('Select which Blocks should be displayed in the block.'),
+      '#title' => t('Available Dashboard Widgets'),
+      '#description' => t('Select which Widgets should be displayed in the Dashboard.'),
       //'#required' => TRUE,
       '#options' => $block_options,
       '#default_value' => $default_value,

@@ -108,3 +108,21 @@ function content_calendar_form_node_form_alter(&$form,
   }
 
 }
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function content_calendar_toolbar_alter(&$items) {
+
+  $links =& $items['content_planner']['tray']['links']['#items'];
+
+  $links['content_calendar'] = [
+    '#type' => 'link',
+    '#title' => t('Content Calendar'),
+    '#url' => \Drupal\Core\Url::fromRoute('content_calendar.current'),
+    '#attributes' => array(
+      'class' => 'toolbar-icon toolbar-icon-system-admin-content'
+    )
+
+  ];
+}

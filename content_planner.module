@@ -35,3 +35,47 @@ function content_planner_theme($existing, $type, $theme, $path) {
 
   );
 }
+
+/**
+ * Implements hook_toolbar().
+ */
+function content_planner_toolbar() {
+
+  $items = [];
+
+  $links['dashboard'] = [
+    '#type' => 'link',
+    '#title' => t('Dashboard'),
+    '#url' => \Drupal\Core\Url::fromRoute('content_planner.dashboard'),
+    '#attributes' => array(
+      'class' => 'toolbar-icon toolbar-icon-system-admin-reports'
+    )
+
+  ];
+
+  $items['content_planner'] = [
+    '#type' => 'toolbar_item',
+    'tab' => [
+      '#type' => 'link',
+      '#title' => t('Content Planner'),
+      '#url' => \Drupal\Core\Url::fromRoute('content_planner.dashboard'),
+      '#options' => [
+        'attributes' => [
+          'title' => t('Content Planner'),
+          'class' => 'trigger toolbar-item toolbar-icon toolbar-icon-system-admin-content',
+        ],
+      ],
+    ],
+    'tray' => [
+      '#heading' => t('Content Planner sections'),
+      'links' => [
+        '#theme' => 'item_list',
+        '#items' => $links,
+      ],
+
+    ],
+    '#weight' => -10,
+  ];
+
+  return $items;
+}

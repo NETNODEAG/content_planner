@@ -1,8 +1,21 @@
 <div id="content-calendar-overview">
-  <div class="filters">
-    <h2>Filters</h2>
-    {{ filters_form }}
+
+  <div class="sidebar">
+
+    <div class="sidebar-block filters">
+      <h2>{{ "Filters"|t }}</h2>
+      {{ filters_form }}
+    </div>
+
+    <div class="sidebar-block links">
+      <h2>{{ "Links"|t }}</h2>
+      <ul>
+        <li><a href="{{ path('content_calendar.settings') }}" title="{{ "Settings"|t }}">{{ "Settings"|t }}</a></li>
+      </ul>
+    </div>
+
   </div>
+
   <div class="calendars">
     {% for calendar in calendars %}
       {{ calendar }}

@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @DashboardBlock(
  *   id = "view_6_block",
- *   name = @Translation("View #6 Block")
+ *   name = @Translation("Views Widget 6")
  * )
  */
 class View6Block extends ViewBlockBase {

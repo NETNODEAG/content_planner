@@ -3,6 +3,31 @@
 #content-calendar-overview {
   display: flex;
   flex-direction: row;
+
+  .sidebar {
+    width: 100%;
+    max-width: 200px;
+    position: fixed;
+
+    &.fixed {
+      top: 100px;
+    }
+
+    .sidebar-block {
+      margin-bottom: 1em;
+    }
+
+    .links {
+      ul {
+        margin-left: 0;
+        padding-left: 0;
+
+        li {
+          list-style: none;
+        }
+      }
+    }
+  }
 }
 
 .calendar-id {
@@ -10,15 +35,6 @@
   top: -100px;
 }
 
-.filters {
-  width: 100%;
-  max-width: 200px;
-  position: fixed;
-
-  &.fixed {
-    top: 100px;
-  }
-}
 
 #edit-calendar-year {
   width: 80%;
@@ -57,7 +73,8 @@
 
   .cell {
     height: 150px;
-    width: 185px;
+    min-width: 185px;
+    width: 2%;
     vertical-align: top;
     border: 1px solid #e6e4df;
     position: relative;
@@ -66,9 +83,21 @@
       background-color: lightgreen;
     }
 
+    &.today {
+      background-color: #cde0ec;
+
+      .day {
+        background-color: #0074bd;
+        color: white;
+      }
+    }
+
     .day {
       margin-bottom: 1em;
       display: block;
+      width: 20px;
+      text-align: center;
+      border-radius: 50%;
     }
 
     .add-content {
@@ -83,8 +112,7 @@
         background-color: #e7e7e7;
         border: 1px solid darkgray;
         border-radius: 50%;
-        width: 20px;
-        height: 20px;
+        padding: 1px 5px;
       }
 
       .add-content-label {
@@ -144,6 +172,11 @@
     margin-bottom: 0.5em;
     background-color: white;
     cursor: move;
+
+    &.ui-draggable-dragging {
+      z-index: 1000;
+      min-width: 160px;
+    }
 
     span {
       display: block;

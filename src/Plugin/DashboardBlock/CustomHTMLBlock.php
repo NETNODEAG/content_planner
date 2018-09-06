@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @DashboardBlock(
  *   id = "custom_html_block",
- *   name = @Translation("Custom HTML Block")
+ *   name = @Translation("Custom HTML Widget")
  * )
  */
 class CustomHTMLBlock extends CustomHTMLBlockBase {

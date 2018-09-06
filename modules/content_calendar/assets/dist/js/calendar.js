@@ -6,7 +6,7 @@
     if(!document.location.hash) {
       var currentDate = new Date();
       var calendarID = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1);
-      window.location.href = "#" + calendarID;
+      window.location.href = '#' + calendarID;
     }
 
     /*
@@ -65,11 +65,11 @@
     window.onscroll = function() {
 
       if(window.scrollY > 100) {
-        $('#content-calendar-overview .filters').addClass('fixed');
+        $('#content-calendar-overview .sidebar').addClass('fixed');
       } else {
-        $('#content-calendar-overview .filters').removeClass('fixed');
+        $('#content-calendar-overview .sidebar').removeClass('fixed');
       }
-    }
+    };
 
   });
 

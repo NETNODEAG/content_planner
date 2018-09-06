@@ -92,3 +92,20 @@ function content_kanban_preprocess_content_calendar_entry(&$variables) {
   //Add label to template
   $variables['workflow_state'] = $workflow_state_label;
 }
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function content_kanban_toolbar_alter(&$items) {
+
+  $links =& $items['content_planner']['tray']['links']['#items'];
+
+  $links['content_kanban'] = [
+    '#type' => 'link',
+    '#title' => t('Content Kanban'),
+    '#url' => \Drupal\Core\Url::fromRoute('content_kanban.kanban'),
+    '#attributes' => array(
+      'class' => 'toolbar-icon toolbar-icon-system-admin-structure'
+    )
+  ];
+}

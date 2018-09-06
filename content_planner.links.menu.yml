@@ -1,6 +1,6 @@
-content_planner.dashboard:
-  title: 'Content Planner'
-  description: 'Content Planner'
-  route_name: content_planner.dashboard
-  parent: system.admin
-  weight: -99
+#content_planner.dashboard:
+#  title: 'Content Planner'
+#  description: 'Content Planner'
+#  route_name: content_planner.dashboard
+#  parent: system.admin
+#  weight: -99

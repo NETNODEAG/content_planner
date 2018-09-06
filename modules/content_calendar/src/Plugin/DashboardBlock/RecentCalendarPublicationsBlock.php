@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @DashboardBlock(
  *   id = "recent_calendar_content_block",
- *   name = @Translation("Recent Calendar Publications Block")
+ *   name = @Translation("Recent Calendar Publications Widget")
  * )
  */
 class RecentCalendarPublicationsBlock extends DashboardBlockBase {

@@ -139,6 +139,9 @@ class Calendar {
    */
   protected function buildCalendarDataStructure() {
 
+    $today_datetime = new \DateTime();
+    $today_datetime->setTime(0, 0, 0);
+
     $one_day_interval = new \DateInterval('P1D');
 
     //Get the first date of a given month
@@ -164,7 +167,8 @@ class Calendar {
         'date' => $datetime->format('Y-m-d'),
         'day' => $datetime->format('j'),
         'weekday' => $datetime->format('N'),
-        'nodes' => array()
+        'nodes' => array(),
+        'is_today' => ($today_datetime == $datetime) ? TRUE : FALSE,
       );
 
       $i++;

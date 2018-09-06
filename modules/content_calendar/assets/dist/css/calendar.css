@@ -1,17 +1,23 @@
 #content-calendar-overview {
   display: flex;
   flex-direction: row; }
+  #content-calendar-overview .sidebar {
+    width: 100%;
+    max-width: 200px;
+    position: fixed; }
+    #content-calendar-overview .sidebar.fixed {
+      top: 100px; }
+    #content-calendar-overview .sidebar .sidebar-block {
+      margin-bottom: 1em; }
+    #content-calendar-overview .sidebar .links ul {
+      margin-left: 0;
+      padding-left: 0; }
+      #content-calendar-overview .sidebar .links ul li {
+        list-style: none; }
 
 .calendar-id {
   position: absolute;
   top: -100px; }
-
-.filters {
-  width: 100%;
-  max-width: 200px;
-  position: fixed; }
-  .filters.fixed {
-    top: 100px; }
 
 #edit-calendar-year {
   width: 80%; }
@@ -35,15 +41,24 @@
     border: 1px solid #bfbfba; }
   .content-calendar .cell {
     height: 150px;
-    width: 185px;
+    min-width: 185px;
+    width: 2%;
     vertical-align: top;
     border: 1px solid #e6e4df;
     position: relative; }
     .content-calendar .cell.hovering {
       background-color: lightgreen; }
+    .content-calendar .cell.today {
+      background-color: #cde0ec; }
+      .content-calendar .cell.today .day {
+        background-color: #0074bd;
+        color: white; }
     .content-calendar .cell .day {
       margin-bottom: 1em;
-      display: block; }
+      display: block;
+      width: 20px;
+      text-align: center;
+      border-radius: 50%; }
     .content-calendar .cell .add-content {
       position: absolute;
       top: 10px;
@@ -55,8 +70,7 @@
         background-color: #e7e7e7;
         border: 1px solid darkgray;
         border-radius: 50%;
-        width: 20px;
-        height: 20px; }
+        padding: 1px 5px; }
       .content-calendar .cell .add-content .add-content-label {
         display: none;
         margin-bottom: 0.5em; }
@@ -92,6 +106,9 @@
     margin-bottom: 0.5em;
     background-color: white;
     cursor: move; }
+    .content-calendar .calendar-entry.ui-draggable-dragging {
+      z-index: 1000;
+      min-width: 160px; }
     .content-calendar .calendar-entry span {
       display: block; }
     .content-calendar .calendar-entry .user-info {

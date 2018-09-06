@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @DashboardBlock(
  *   id = "user_block",
- *   name = @Translation("User Block")
+ *   name = @Translation("User Widget")
  * )
  */
 class UserBlock extends DashboardBlockBase {

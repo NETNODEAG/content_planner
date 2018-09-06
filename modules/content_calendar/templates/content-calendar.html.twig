@@ -46,7 +46,7 @@
       <tr>
       {% endif %}
 
-    <td class="cell droppable" data-date="{{ day.date }}">
+    <td class="cell droppable {% if day.is_today %}today{% endif %}" data-date="{{ day.date }}">
       <span class="day">{{ day.day }}</span>
 
       <div class="add-content">
