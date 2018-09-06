@@ -2,13 +2,23 @@
   "name": "netnodeag/content_planner",
   "type": "drupal-module",
   "description": "Plan your content using the Content Calendar and Content Kanban",
-  "keywords": ["Drupal"],
+  "keywords": ["Drupal", "Content Planner"],
   "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Martin Penev",
+      "homepage": "https://www.drupal.org/u/martinpe",
+      "role": "Maintainer"
+    }
+  ],
   "homepage": "https://www.drupal.org/project/content_planner",
   "minimum-stability": "dev",
   "support": {
     "issues": "https://www.drupal.org/project/issues/content_planner",
     "source": "http://cgit.drupalcode.org/content_planner"
   },
-  "require": { }
+  "require": {
+    "php": "^7.0",
+    "drupal/scheduler": "^1.0"
+  },
 }
