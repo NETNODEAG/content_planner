@@ -5,5 +5,4 @@ core: 8.x
 package: 'Content Planner'
 dependencies:
   - content_moderation
-  - image
   - content_planner
